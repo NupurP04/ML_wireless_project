@@ -111,10 +111,8 @@ for snr_idx = 1:length(SNR_dB)
 
             % --- ELM Detection ---
             % Compute Y_P
-            Y_P = zeros(4,Nr);
-            for k_p = 1:4
-                Y_P(k_p,:) = (H_est) * X_P(:,k_p);
-            end
+            Y_P = rxFrame_freq(1:2,:); 
+            X_P = ofdm_symbols(1:2,:,1);
 
             % Compute M_P for each
             M_P = zeros(4,L);
